@@ -1,12 +1,13 @@
 class Timer {
     constructor(root) {
+        console.log(root);
         root.innerHTML = Timer.getHTML();
 
         this.el = {
             minutes: root.querySelector('.timer__part--minutes'),
             seconds: root.querySelector('.timer__part--seconds'),
             control: root.querySelector('.timer__btn--control'),
-            reset: root.querySelector('.timer__btn--reset')
+            reset: root.querySelector('timer__btn--reset')
         };
         
         this.interval = null;
@@ -41,11 +42,11 @@ class Timer {
 
     updateInterfaceControls() {
         if (this.interval === null) {
-            this.el.control.innerHTML = `<span class="material-icons">play_circle_filled</span>`;
+            this.el.control.innerHTML = `<span class="material-icons">play_arrow</span>`;
             this.el.control.classList.add('timer__btn--start');
             this.el.control.classList.remove('timer__btn--stop');
         } else {
-            this.el.control.innerHTML = `<span class="material-icons">pause</span>`;
+            this.el.control.innerHTML = `<span class="material-icons">play_arrow</span>`;
             this.el.control.classList.add('timer__btn--stop');
             this.el.control.classList.remove('timer__btn--start');
         }
@@ -89,6 +90,6 @@ class Timer {
     }
 }
 
-new Timer(
+new Timer (
     document.querySelector('.timer')
 );

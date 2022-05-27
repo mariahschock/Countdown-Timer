@@ -1,6 +1,13 @@
 body {
     background: #dddddd;
-    margin: 24px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+    padding-top: 350px;
 }
 
 .timer {
